@@ -2,22 +2,31 @@ version: "3"
 
 services:
   php:
+    env_file: 
+      - ./.env
     build: ./docker/
     volumes: 
-    - ./src:/var/www/html
+      - ./src:/var/www/html
     working_dir: /var/www/html
     depends_on:
       - db
     ports:
       - "8000:80"
     environment:
-      - "TEST=test"
+      - DB_DRIVER=${DB_DRIVER}
+      - DB_SERVER=${DB_SERVER}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PREFIX=${DB_PASSWORD}
 
   db:
+    env_file: 
+      - ./.env
     image: "mariadb:10"
     environment: 
-    - "MYSQL_ROOT_PASSWORD=example"
-    - "MYSQL_DATABASE=tematres"
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
 
   adminer:
     image: adminer

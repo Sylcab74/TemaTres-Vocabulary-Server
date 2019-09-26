@@ -23,22 +23,22 @@
 // Select driver to use
 // Default: MySQLi , can be mysqli,postgres, oci8, mssql, and more: http://phplens.com/adodb/supported.databases.html
 // To default value, leave empty eg: $DBCFG["DBdriver"] ="";
-$DBCFG["DBdriver"] ="mysqli";
+$DBCFG["DBdriver"] = getenv("DB_DRIVER");
 
 //  Dirección IP o nombre del servidor - IP Address of the database server
-$DBCFG["Server"]      = "db";
+$DBCFG["Server"] = getenv("DB_SERVER");
 
 //  Nombre de la base de datos Database name
-$DBCFG["DBName"]     = "tematres";
+$DBCFG["DBName"] = getenv("DB_NAME");
 
 //  Nombre de usuario - login
-$DBCFG["DBLogin"]    = "root";
+$DBCFG["DBLogin"] = getenv("DB_USER");
 
 //  Passwords
-$DBCFG["DBPass"] = "example";
+$DBCFG["DBPass"] = getenv("DB_PASSWORD");
 
 //  Prefijo para tablas # Prefix for tables
-$DBCFG["DBprefix"] = "lc_";
+$DBCFG["DBprefix"] = getenv("DB_PREFIX");
 
 
 $DBCFG["DBcharset"] ="utf8";
