@@ -9,6 +9,15 @@ released under the licence GNU General Public License, Version 2 (GPLv2), June 1
 This is the file LEAME.TXT
 
 
+## Docker
+### requirements:
+  - docker
+  - docker-compose
+
+### How to run 
+  To launch TemaTres with docker run: `docker-compose up`
+
+
 ## Documentation
 Main site: http://www.vocabularyserver.com/
 
