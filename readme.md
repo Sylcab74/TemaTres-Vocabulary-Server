@@ -10,9 +10,13 @@ This is the file LEAME.TXT
 
 
 ## Docker
-### requirements:
+### Requirements:
   - docker
   - docker-compose
+
+### Configuration
+ - Copy `.env.dist` in `.env`
+ - Edit `.env` to configure your database 
 
 ### How to run 
   To launch TemaTres with docker run: `docker-compose up`
